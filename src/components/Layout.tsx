@@ -10,7 +10,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <Sidebar collapsed={collapsed} setCollapsed={setCollapsed} />
       <div className={`flex-1 flex flex-col transition-all duration-300 ${collapsed ? 'ml-16' : 'ml-64'}`}>
         <Topbar />
-        <main className="flex-1 p-4 md:p-8 lg:p-12 max-w-6xl mx-auto w-full">{children}</main>
+        <main className="flex-1 max-w-6xl mx-auto w-full">{children}</main>
       </div>
     </div>
   );

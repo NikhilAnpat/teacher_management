@@ -1,10 +1,9 @@
 "use client";
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'next/navigation';
 import TeacherDetails from '../../../components/TeacherDetails';
 import ScheduleTable from '../../../components/ScheduleTable';
 import { Teacher } from '../../../types';
-import { useToast } from '../../../components/FeedbackToast';
 
 const teachers: Teacher[] = [
   {
@@ -13,6 +12,7 @@ const teachers: Teacher[] = [
     email: 'alyina.allan@sample.com',
     phone: '555-000-0007',
     address: '123 Main St, New York',
+    hourRate: 45,
     qualifications: [
       { name: 'Music', date: '2018' },
       { name: 'Vocal Competency', date: '2019' },
@@ -29,6 +29,7 @@ const teachers: Teacher[] = [
     email: 'john.smith@sample.com',
     phone: '555-000-0008',
     address: '456 Park Ave, New York',
+    hourRate: 50,
     qualifications: [
       { name: 'Math', date: '2017' },
       { name: 'Physics', date: '2016' },
@@ -45,6 +46,7 @@ const teachers: Teacher[] = [
     email: 'priya.patel@sample.com',
     phone: '555-000-0009',
     address: '789 Broadway, New York',
+    hourRate: 40,
     qualifications: [
       { name: 'English', date: '2015' },
       { name: 'Literature', date: '2014' },
@@ -61,6 +63,7 @@ const teachers: Teacher[] = [
     email: 'chen.wang@sample.com',
     phone: '555-000-0010',
     address: '321 5th Ave, New York',
+    hourRate: 55,
     qualifications: [
       { name: 'Science', date: '2013' },
       { name: 'Biology', date: '2012' },
@@ -77,15 +80,9 @@ const TeacherProfilePage = () => {
   const params = useParams();
   const teacherId = params?.id as string;
   const teacher = teachers.find(t => t.id === teacherId);
-  const { showToast } = useToast();
-
-  useEffect(() => {
-    if (teacher) {
-      showToast(`Viewing profile for ${teacher.name}`, 'success');
-    }
-  }, [teacher, showToast]);
 
   if (!teacher) return <div className="text-red-600">Teacher not found.</div>;
+  
   return (
     <div className="space-y-8">
       <TeacherDetails teacher={teacher} />

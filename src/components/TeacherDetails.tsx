@@ -14,6 +14,7 @@ const TeacherDetails: React.FC<Props> = ({ teacher }) => {
         <div className="mb-2"><span className="font-medium">Email:</span> {teacher.email}</div>
         <div className="mb-2"><span className="font-medium">Phone:</span> {teacher.phone}</div>
         <div className="mb-2"><span className="font-medium">Address:</span> {teacher.address}</div>
+        <div className="mb-2"><span className="font-medium">Hourly Rate:</span> ${teacher.hourRate}/hr</div>
       </div>
       <div>
         <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Private Qualifications</h2>

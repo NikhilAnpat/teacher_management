@@ -19,7 +19,8 @@ const TeacherCard: React.FC<Props> = ({ teacher }) => {
         </div>
       </div>
       <div className="text-sm text-gray-700 dark:text-gray-300 mb-1">{teacher.phone}</div>
-      <div className="text-xs text-gray-500 dark:text-gray-400">{teacher.address}</div>
+      <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">{teacher.address}</div>
+      <div className="text-sm font-medium text-green-600 dark:text-green-400 mb-2">${teacher.hourRate}/hr</div>
       <div className="mt-2 flex flex-wrap gap-2">
         {teacher.qualifications.map(q => (
           <span key={q.name} className="bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs">{q.name}</span>

@@ -82,8 +82,8 @@ const options = {
 };
 
 const DashboardChart = () => (
-  <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6">
-    <Line data={data} options={options} height={320} />
+  <div className="w-full h-full">
+    <Line data={data} options={options} className="w-full h-full" />
   </div>
 );
 
