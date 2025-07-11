@@ -1,10 +1,9 @@
 "use client";
 import React, { useState } from 'react';
-import TeacherCard from '../../components/TeacherCard';
-import TeacherModal from '../../components/AddTeacherModal';
-import TeacherViewModal from '../../components/TeacherViewModal';
-import { Teacher } from '../../types';
-import { useToast } from '../../components/FeedbackToast';
+import TeacherModal from '../../../components/AddTeacherModal';
+import TeacherViewModal from '../../../components/TeacherViewModal';
+import { Teacher } from '../../../types';
+import { useToast } from '../../../components/FeedbackToast';
 
 const initialTeachers: Teacher[] = [
   {

@@ -1,6 +1,6 @@
-import Skeleton from '../../components/Loader';
+import Skeleton from '../../../components/Loader';
 
-export default function ReportsLoading() {
+export default function ClassesLoading() {
   return (
     <div className="w-full min-h-screen p-0 sm:p-4 bg-gradient-to-br from-blue-20 to-blue-50 dark:from-gray-900 dark:to-gray-950">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-8">
@@ -11,10 +11,11 @@ export default function ReportsLoading() {
             <Skeleton key={i} height="80px" />
           ))}
         </div>
-        {/* Chart cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          {[...Array(2)].map((_, i) => (
-            <Skeleton key={i} height="320px" />
+        {/* Class table skeleton */}
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6">
+          <Skeleton width="100%" height="2rem" className="mb-4" />
+          {[...Array(8)].map((_, i) => (
+            <Skeleton key={i} width="100%" height="1.5rem" className="mb-2" />
           ))}
         </div>
       </div>

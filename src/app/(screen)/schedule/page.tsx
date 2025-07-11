@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from 'react';
-import ScheduleTable from '../../components/ScheduleTable';
-import { Teacher } from '../../types';
-import AssignClassModal from '../../components/AssignClassModal';
+import ScheduleTable from '../../../components/ScheduleTable';
+import { Teacher } from '../../../types';
+import AssignClassModal from '../../../components/AssignClassModal';
 
 // Sample teachers data with schedules
 const teachers: Teacher[] = [

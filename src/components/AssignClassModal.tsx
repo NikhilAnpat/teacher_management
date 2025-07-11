@@ -39,29 +39,35 @@ const AssignClassModal: React.FC<AssignClassModalProps> = ({ open, onClose, teac
         <h2 className="text-xl font-bold mb-6">Assign Class</h2>
         <div className="mb-4">
           <label>Teacher</label>
-          <select value={teacherId} onChange={e => setTeacherId(e.target.value)} required className="w-full">
+          <select value={teacherId} onChange={e => setTeacherId(e.target.value)} required
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
             <option value="">Select Teacher</option>
             {teachers.map(t => <option key={t.id} value={t.id}>{t.name}</option>)}
           </select>
         </div>
         <div className="mb-4">
           <label>Day</label>
-          <select value={day} onChange={e => setDay(e.target.value)} required className="w-full">
+          <select value={day} onChange={e => setDay(e.target.value)} required
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
             <option value="">Select Day</option>
             {days.map(d => <option key={d} value={d}>{d}</option>)}
           </select>
         </div>
         <div className="mb-4">
           <label>Start Time</label>
-          <input type="time" value={startTime} onChange={e => setStartTime(e.target.value)} required className="w-full" />
+          <input type="time" value={startTime} onChange={e => setStartTime(e.target.value)} required
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
         <div className="mb-4">
           <label>End Time</label>
-          <input type="time" value={endTime} onChange={e => setEndTime(e.target.value)} required className="w-full" />
+          <input type="time" value={endTime} onChange={e => setEndTime(e.target.value)} required
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
         <div className="mb-4">
           <label>Type</label>
-          <input value={type} onChange={e => setType(e.target.value)} required className="w-full" placeholder="e.g. Math, Music" />
+          <input value={type} onChange={e => setType(e.target.value)} required
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="e.g. Math, Music" />
         </div>
         <div className="flex justify-end gap-2">
           <button type="button" onClick={onClose} className="px-4 py-2 bg-gray-200 rounded">Cancel</button>

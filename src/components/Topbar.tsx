@@ -44,6 +44,7 @@ const Topbar = () => {
   const [showNotifications, setShowNotifications] = useState(false);
   const unreadCount = notifications.filter(n => !n.read).length;
   const router = useRouter();
+  const [showUserMenu, setShowUserMenu] = useState(false);
 
   return (
     <header className="w-full h-16 flex items-center justify-between px-6 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 shadow-sm sticky top-0 z-20">
@@ -120,13 +121,27 @@ const Topbar = () => {
             </div>
           )}
         </div>
-        <div className="flex items-center gap-2">
-          <span className="text-gray-700 dark:text-gray-200 font-medium">{user.name}</span>
+        <div className="flex items-center gap-2 relative">
+          <span className="text-gray-700 dark:text-gray-200 font-medium cursor-pointer" onClick={() => setShowUserMenu(v => !v)}>{user.name}</span>
           {user.avatar ? (
-            <img src={user.avatar} alt="User avatar" className="w-8 h-8 rounded-full border border-gray-300 dark:border-gray-700" />
+            <img src={user.avatar} alt="User avatar" className="w-8 h-8 rounded-full border border-gray-300 dark:border-gray-700 cursor-pointer" onClick={() => setShowUserMenu(v => !v)} />
           ) : (
-            <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold border border-gray-300 dark:border-gray-700">
+            <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold border border-gray-300 dark:border-gray-700 cursor-pointer" onClick={() => setShowUserMenu(v => !v)}>
               {user.name[0]}
+            </div>
+          )}
+          {showUserMenu && (
+            <div className="absolute right-0 top-12 w-40 bg-white dark:bg-gray-800 rounded shadow-lg border border-gray-200 dark:border-gray-700 z-50">
+              <button
+                className="w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100 dark:hover:bg-gray-700 rounded"
+                onClick={() => {
+                  localStorage.removeItem('isLoggedIn');
+                  setShowUserMenu(false);
+                  router.push('/auth/login');
+                }}
+              >
+                Logout
+              </button>
             </div>
           )}
         </div>

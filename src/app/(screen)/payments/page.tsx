@@ -1,9 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Payment, Teacher } from '../../types';
-import { useToast } from '../../components/FeedbackToast';
+import { Payment, Teacher } from '../../../types';
+import { useToast } from '../../../components/FeedbackToast';
 import PaymentsLoading from './loading';
-import PaymentViewModal from '../../components/PaymentViewModal';
+import PaymentViewModal from '../../../components/PaymentViewModal';
 
 // Sample teachers (copied from teachers page)
 const initialTeachers: Teacher[] = [

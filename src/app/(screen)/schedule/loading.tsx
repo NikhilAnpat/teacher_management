@@ -1,4 +1,4 @@
-import Skeleton from '../../components/Loader';
+import Skeleton from '../../../components/Loader';
 
 export default function ScheduleLoading() {
   return (

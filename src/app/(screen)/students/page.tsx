@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import { Student } from "../../types";
-import StudentModal from "../../components/StudentModal";
-import StudentViewModal from "../../components/StudentViewModal";
-import { useToast } from "../../components/FeedbackToast";
+import { Student } from "../../../types";
+import StudentModal from "../../../components/StudentModal";
+import StudentViewModal from "../../../components/StudentViewModal";
+import { useToast } from "../../../components/FeedbackToast";
 
 const initialStudents: Student[] = [
   { id: "1", name: "Emily Carter", email: "emily.carter@example.com", grade: "10", status: "active", enrollmentDate: "2022-09-01", phone: "555-123-4567", address: "123 Oak St, New York", parentName: "John Carter", parentPhone: "555-123-4568", emergencyContact: "555-123-4569" },

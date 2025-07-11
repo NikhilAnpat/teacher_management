@@ -10,7 +10,7 @@ interface ClassItem {
   room: string;
 }
 import ClassesLoading from "./loading";
-import ClassModal from '../../components/ClassModal';
+import ClassModal from '../../../components/ClassModal';
 
 const initialClasses: ClassItem[] = [
   { id: "1", name: "Mathematics", teacher: "John Smith", schedule: "Mon 9:00-11:00", students: 25, status: 'Active', room: 'A101' },

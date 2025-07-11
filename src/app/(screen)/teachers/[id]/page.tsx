@@ -1,9 +1,9 @@
 "use client";
 import React from 'react';
 import { useParams } from 'next/navigation';
-import TeacherDetails from '../../../components/TeacherDetails';
-import ScheduleTable from '../../../components/ScheduleTable';
-import { Teacher } from '../../../types';
+import TeacherDetails from '../../../../components/TeacherDetails';
+import ScheduleTable from '../../../../components/ScheduleTable';
+import { Teacher } from '../../../../types';
 
 const teachers: Teacher[] = [
   {
